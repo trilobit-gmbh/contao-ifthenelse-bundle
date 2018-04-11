@@ -73,13 +73,15 @@ class HookOutputFrontendTemplate extends Template
                                 '__BRCL__', '__BRCR__',
                                 '[gt]', '&gt;', '&#62;',
                                 '[lt]', '&lt;', '&#60;',
-                                '[&]', '&amp;', '&#38;'
+                                '[&]', '&amp;', '&#38;',
+                                '&#61;'
                             ),
                             array(
                                 '{{', '}}',
                                 '>', '>', '>',
                                 '<', '<', '<',
-                                '&', '&', '&'
+                                '&', '&', '&',
+                                '='
                             ),
                             $strCondition
                         ),
