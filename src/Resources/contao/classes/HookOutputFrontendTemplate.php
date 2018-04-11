@@ -79,8 +79,8 @@ class HookOutputFrontendTemplate extends Template
 
             if ($blnEval)
             {
-                var_dump($strReturn);
-                die();
+                //var_dump($strReturn);
+                //die();
 
                 ob_start();
                 $blnEval = eval('?>' . $strBuffer);
