@@ -67,7 +67,24 @@ class HookOutputFrontendTemplate extends Template
 
                 if ($strCondition !== '')
                 {
-                    $strReturn .= Controller::replaceInsertTags(str_replace(array('__BRCL__', '__BRCR__', '[gt]', '&gt;', '&#62;', '[lt]', '&lt;', '&#60;', '[&]'), array('{{', '}}', '>', '>', '>', '<', '<', '<', '&'), $strCondition), false);
+                    $strReturn .= Controller::replaceInsertTags(
+                        str_replace(
+                            array(
+                                '__BRCL__', '__BRCR__',
+                                '[gt]', '&gt;', '&#62;',
+                                '[lt]', '&lt;', '&#60;',
+                                '[&]', '&amp;', '&#38;'
+                            ),
+                            array(
+                                '{{', '}}',
+                                '>', '>', '>',
+                                '<', '<', '<',
+                                '&', '&', '&'
+                            ),
+                            $strCondition
+                        ),
+                        false
+                    );
                 }
                 else
                 {
