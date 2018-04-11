@@ -67,7 +67,7 @@ class HookOutputFrontendTemplate extends Template
 
                 if ($strCondition !== '')
                 {
-                    $strReturn .= Controller::replaceInsertTags(str_replace(array('__BRCL__', '__BRCR__', '[gt]', '&gt;', '[lt]', '&lt;', '[&]'), array('{{', '}}', '>', '>', '<', '<', '&'), $strCondition), false);
+                    $strReturn .= Controller::replaceInsertTags(str_replace(array('__BRCL__', '__BRCR__', '[gt]', '&gt;', '&#62;', '[lt]', '&lt;', '&#60;', '[&]'), array('{{', '}}', '>', '>', '>', '<', '<', '<', '&'), $strCondition), false);
                 }
                 else
                 {
@@ -79,6 +79,9 @@ class HookOutputFrontendTemplate extends Template
 
             if ($blnEval)
             {
+                var_dump($strReturn);
+                die();
+
                 ob_start();
                 $blnEval = eval('?>' . $strBuffer);
                 $strBuffer = ob_get_contents();
