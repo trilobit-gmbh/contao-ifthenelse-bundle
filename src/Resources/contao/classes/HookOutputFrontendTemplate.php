@@ -111,12 +111,6 @@ class HookOutputFrontendTemplate extends Template
                     $operator = self::searchReplace($arrCondition[2][0], false);
                     $value    = self::searchReplace($arrCondition[3][0]);
 
-                    var_dump(array(
-                        $token,
-                        $operator,
-                        $value
-                    ));
-
                     if (!in_array($operator, $arrOperations))
                     {
                         throw new \Exception("Error condition (if-operator [" . $operator . "]) in Trilobit\IfthenelseBundle\HookOutputFrontendTemplate::replaceConditionalTags()");
