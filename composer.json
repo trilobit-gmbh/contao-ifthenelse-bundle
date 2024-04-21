@@ -11,7 +11,8 @@
   ],
   "require": {
     "php": "^7.3 || ^8.0",
-    "contao/core-bundle": "^4.13 || ^5.0"
+    "contao/core-bundle": "^4.13 || ^5.0",
+    "symfony/expression-language": "^6.4"
   },
   "require-dev": {
     "contao/easy-coding-standard": "^3.0",
