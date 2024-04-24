@@ -11,8 +11,7 @@
   ],
   "require": {
     "php": "^7.3 || ^8.0",
-    "contao/core-bundle": "^4.13 || ^5.0",
-    "symfony/expression-language": "^6.4"
+    "contao/core-bundle": "^4.13 || ^5.0"
   },
   "require-dev": {
     "contao/easy-coding-standard": "^3.0",
@@ -29,9 +28,6 @@
   },
   "conflict": {
     "contao/manager-plugin": "<2.0 || >=3.0"
-  },
-  "extra": {
-    "contao-manager-plugin": "Trilobit\\IfthenelseBundle\\ContaoManager\\Plugin"
   },
   "config": {
     "allow-plugins": {
