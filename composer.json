@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Trilobit\\ConstantsBundle\\": "src/"
+      "Trilobit\\IfthenelseBundle\\": "src/"
     }
   },
   "extra": {
