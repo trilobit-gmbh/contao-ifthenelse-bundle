@@ -1,0 +1,4 @@
+services:
+  trilobit_contao_ifthenelse.listener.insert_tags:
+    class: Trilobit\IfthenelseBundle\EventListener\InsertTagsListener
+    public: true

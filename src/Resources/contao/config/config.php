@@ -1,14 +1,16 @@
 <?php
 
-/**
- * Contao Open Source CMS
- *
- * Copyright (C) 2005-2014 Leo Feyer
- *
- * @package     Trilobit
- * @author      trilobit GmbH <https://github.com/trilobit-gmbh>
- * @license     LGPL-3.0-or-later
- * @copyright   trilobit GmbH
+declare(strict_types=1);
+
+/*
+ * @copyright  trilobit GmbH
+ * @author     trilobit GmbH <https://github.com/trilobit-gmbh>
+ * @license    LGPL-3.0-or-later
  */
 
-$GLOBALS['TL_HOOKS']['outputFrontendTemplate'][] = array('Trilobit\IfthenelseBundle\HookOutputFrontendTemplate', 'replaceConditionalTags');
+use Trilobit\IfthenelseBundle\EventListener\InsertTagListener;
+
+/*
+ * Register hook
+ */
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = [InsertTagListener::class, '__invoke'];
