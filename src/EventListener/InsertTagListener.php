@@ -12,6 +12,7 @@ namespace Trilobit\IfthenelseBundle\EventListener;
 
 use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Date;
+use Contao\FrontendUser;
 use Contao\System;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
@@ -54,14 +55,14 @@ class InsertTagListener
         $config['app']->isoDate = Date::parse('Y-m-d');
         $config['app']->isoTime = Date::parse('H:i');
 
-        $config['app']->minute = Date::parse('i');
-        $config['app']->hour = Date::parse('H');
-        $config['app']->day = Date::parse('d');
-        $config['app']->month = Date::parse('m');
-        $config['app']->year = Date::parse('Y');
+        $config['app']->minute = (int) Date::parse('i');
+        $config['app']->hour = (int) Date::parse('H');
+        $config['app']->day = (int) Date::parse('d');
+        $config['app']->month = (int) Date::parse('m');
+        $config['app']->year = (int) Date::parse('Y');
 
-        $config['app']->date = Date::parse('Ymd');
-        $config['app']->time = Date::parse('Hi');
+        $config['app']->date = (int) Date::parse('Ymd');
+        $config['app']->time = (int) Date::parse('Hi');
 
         $config['app']->tstamp = time();
 
