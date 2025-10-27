@@ -10,7 +10,6 @@ declare(strict_types=1);
 
 namespace Trilobit\IfthenelseBundle\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Date;
 use Contao\FrontendUser;
 use Contao\System;
