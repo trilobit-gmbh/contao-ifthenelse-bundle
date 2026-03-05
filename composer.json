@@ -1,6 +1,6 @@
 {
     "name": "trilobit-gmbh/contao-ifthenelse-bundle",
-    "description": "Contao 4 ifthenelse bundle",
+    "description": "Contao 4 / Contao 5 ifthenelse bundle",
     "type": "contao-bundle",
     "license": "LGPL-3.0-or-later",
     "authors": [
