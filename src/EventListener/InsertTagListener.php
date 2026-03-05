@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Trilobit\IfthenelseBundle\EventListener;
 
-use Contao\CoreBundle\ServiceAnnotation\Hook;
 use Contao\Date;
 use Contao\FrontendUser;
+use Contao\PageModel;
 use Contao\System;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
@@ -20,9 +20,8 @@ class InsertTagListener
 {
     /**
      * Class ReplaceInsertTags.
-     *
-     * @Hook("replaceInsertTags")
      */
+    #[\Contao\CoreBundle\DependencyInjection\Attribute\AsHook('replaceInsertTags')]
     public function __invoke(string $tag)
     {
         $chunks = explode('::', $tag);
@@ -31,7 +30,9 @@ class InsertTagListener
             return false;
         }
 
-        return $this->isVisible($chunks[1]) ? $chunks[2] ?? '' : $chunks[3] ?? '';
+        return $this->isVisible($chunks[1])
+            ? $chunks[2] ?? ''
+            : $chunks[3] ?? '';
     }
 
     public function isVisible($expression): bool
@@ -40,7 +41,9 @@ class InsertTagListener
             return true;
         }
 
-        $tokenChecker = System::getContainer()->get('contao.security.token_checker');
+        $container = System::getContainer();
+
+        $tokenChecker = $container->get('contao.security.token_checker');
 
         $config['member'] = new \stdClass();
         if (null !== $tokenChecker
@@ -48,6 +51,10 @@ class InsertTagListener
         ) {
             $config['member'] = FrontendUser::getInstance();
         }
+
+        $request = $container->get('request_stack');
+
+        $config['page'] = $request->getCurrentRequest()->get('pageModel');
 
         $config['app'] = new \stdClass();
         $config['app']->tools = new App();
