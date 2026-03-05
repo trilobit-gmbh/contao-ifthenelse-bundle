@@ -71,11 +71,8 @@ The IfThenElse bundle provides the Symfony ExpressionLanguage via the InsertTag 
 * app.date `// Date::parse('Ymd')`
 * app.time `// Date::parse('Hi')`
 * app.tstamp `// time()`
-
 * app.tools.dateDiff(dateA, dateB, 'days') `// days, y, m, d, h, i, s`
-
 * member.[...]
-*
 * page.[...]
 
 ### Examples
